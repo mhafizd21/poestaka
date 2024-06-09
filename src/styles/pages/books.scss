@@ -1,0 +1,25 @@
+.books-detail {
+  margin: $size-10 0;
+  &__section {
+    display: flex;
+    gap: $size-10;
+    justify-content: center;
+  }
+  &__image {
+    width: $size-full;
+  }
+  &__info {
+    display: flex;
+    gap: $size-4;
+    margin-bottom: $size-6;
+  }
+  &__info-text {
+    font-family: $font-style-header;
+    font-size: $size-text-xl;
+    font-weight: $font-semibold;
+  }
+  &__description {
+    font-size: $size-text-lg;
+    margin-bottom: $size-4;
+  }
+}

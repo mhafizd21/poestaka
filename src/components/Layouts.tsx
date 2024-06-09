@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import Container from "./Container";
 
 const Layouts = () => {
@@ -7,9 +7,9 @@ const Layouts = () => {
       <header className="layouts__header">
         <Container>
           <div className="layouts__header-content">
-            <p className="logo">
+            <Link to="/" className="logo">
               Poestaka
-            </p>
+            </Link>
             <div>
               <div>
                 icon love

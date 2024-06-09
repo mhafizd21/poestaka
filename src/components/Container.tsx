@@ -1,13 +1,13 @@
+import clsx from "clsx";
 import { FC, HTMLAttributes } from "react";
 
 const Container: FC<HTMLAttributes<HTMLDivElement>> = ({
   children,
-}) => {
-  return (
-    <div className="container">
-      {children}
-    </div>
-  );
-};
+  className,
+}) => (
+  <div className={clsx("container", className || "")}>
+    {children}
+  </div>
+);
 
 export default Container;

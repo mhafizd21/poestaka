@@ -11,9 +11,13 @@ const Button: FC<IButton> = ({
   children,
   variant = "primary",
   className = "",
+  ...props
 }) => {
   return (
-    <button className={clsx(`btn btn--${variant}`, className) }>
+    <button 
+      {...props}
+      className={clsx(`btn btn--${variant}`, className)}
+    >
       {children}
     </button>
   );
