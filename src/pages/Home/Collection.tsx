@@ -1,10 +1,10 @@
 import { useQuery } from "react-query";
 import { Container } from "../../components";
-import Card from "../../components/Card";
+import Card, { CardSkeleton } from "../../components/Card";
 import { getBookList } from "../../services/api";
 
 const Collection = () => {
-  const { data } = useQuery("list-book", () => getBookList(), { refetchOnWindowFocus: false });
+  const { data, isLoading } = useQuery("list-book", () => getBookList(), { refetchOnWindowFocus: false });
 
   return (
     <div className="collection">
@@ -15,9 +15,16 @@ const Collection = () => {
           </p>
         </div>
         <div className="collection__list">
-          {!!data?.length && data?.map(item => (
+          {!!data?.length && !isLoading && data?.map(item => (
             <Card data={item} key={item.id} />
           ))}
+          {isLoading && (
+            <>
+              {[ ...Array(5).keys() ].map(item => (
+                <CardSkeleton key={item} />
+              ))}
+            </>
+          )}
         </div>
       </Container>
     </div>

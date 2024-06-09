@@ -7,6 +7,7 @@
     top: 0;
     left: 0;
     width: $size-full;
+    z-index: 2;
     &-content {
       padding: $size-4 $size-0;
       display: flex;

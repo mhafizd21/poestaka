@@ -18,4 +18,14 @@
       line-height: 1.2;
     }
   }
+  &__loader {
+    display: flex;
+    flex-direction: column;
+    gap: $size-3;
+    &-desc {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 }
