@@ -1,10 +1,12 @@
-import { IBook } from "../interfaces";
+import { IBook, IGetBookListParams } from "../interfaces";
 import axiosClient from "./services";
 
-export const getBookList = async (): Promise<IBook[]> => {
+export const getBookList = async (params?: IGetBookListParams): Promise<IBook[]> => {
+  console.log("🚀 ~ getBookList ~ params:", params);
   const { data } = await axiosClient({
     url: "mock/books",
     method: "GET",
+    params,
   });
 
   return data;

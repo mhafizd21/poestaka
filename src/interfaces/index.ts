@@ -7,3 +7,8 @@ export interface IBook {
   cover: string;
   publicationDate: string;
 }
+
+export interface IGetBookListParams {
+  _page: number;
+  _limit: number;
+}

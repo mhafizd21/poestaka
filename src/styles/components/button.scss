@@ -41,9 +41,12 @@
   &--text {
     @include button-mixin($color-base-0, $color-base-0, $color-primary, $color-base-0);
   }
+  &--lg {
+    height: $size-11;
+    font-size: $size-text-lg;
+  }
+  &--md {
+    height: $size-9;
+    font-size: $size-text-md;
+  }
 };
-
-.btn--lg {
-  height: $size-11;
-  font-size: $size-text-md;
-}

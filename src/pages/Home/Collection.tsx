@@ -1,10 +1,43 @@
+import { useState } from "react";
 import { useQuery } from "react-query";
-import { Container } from "../../components";
+import { Button, Container } from "../../components";
 import Card, { CardSkeleton } from "../../components/Card";
+import { IBook } from "../../interfaces";
 import { getBookList } from "../../services/api";
 
+const limit = 5;
+
 const Collection = () => {
-  const { data, isLoading } = useQuery("list-book", () => getBookList(), { refetchOnWindowFocus: false });
+  const [listData, setListData] = useState<IBook[]>([]);
+  const [hasNextPage, setHasNextPage] = useState(true);
+  const [page, setPage] = useState(1);
+  const { isLoading } = useQuery(
+    ["list-books", page],
+    () => getBookList({
+      _page: page,
+      _limit: limit,
+    }),
+    {
+      refetchOnWindowFocus: false,
+      onSuccess: res => {
+        setListData(prev => [
+          ...prev,
+          ...res,
+        ]);
+        if (res.length === limit) {
+          setHasNextPage(true);
+        } else {
+          setHasNextPage(false);
+        }
+      }
+    }
+  );
+
+  const fetchNextPage = () => {
+    if (hasNextPage) {
+      setPage(prev => prev + 1);
+    }
+  };
 
   return (
     <div className="collection">
@@ -15,7 +48,7 @@ const Collection = () => {
           </p>
         </div>
         <div className="collection__list">
-          {!!data?.length && !isLoading && data?.map(item => (
+          {!!listData?.length && listData?.map(item => (
             <Card data={item} key={item.id} />
           ))}
           {isLoading && (
@@ -26,6 +59,13 @@ const Collection = () => {
             </>
           )}
         </div>
+        {hasNextPage && (
+          <div className="collection__nav">
+            <Button onClick={() => fetchNextPage()}>
+              Load More
+            </Button>
+          </div>
+        )}
       </Container>
     </div>
   );

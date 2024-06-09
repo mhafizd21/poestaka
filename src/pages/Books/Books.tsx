@@ -73,7 +73,8 @@ const Books = () => {
                 </p>
                 <Button
                   variant="text"
-                  className="p-1 btn--lg"
+                  size="lg"
+                  className="p-1"
                   onClick={() => navigate(-1)}
                 >
                   Back

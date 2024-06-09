@@ -17,6 +17,10 @@
     flex-wrap: wrap;
     gap: $size-6;
   }
+  &__nav {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .home-banner {
