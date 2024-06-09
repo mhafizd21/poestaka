@@ -1,8 +1,12 @@
+import { QueryClient, QueryClientProvider } from "react-query";
+import BaseRouter from "./routes/BaseRouter";
+
+const queryClient = new QueryClient();
+
 const App = () => (
-  <>
-    <h1>Vite + React</h1>
-    <p>Vite React Boilerplate</p>
-  </>
+  <QueryClientProvider client={queryClient}>
+    <BaseRouter />
+  </QueryClientProvider>
 );
 
 export default App;
