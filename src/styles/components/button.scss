@@ -1,0 +1,49 @@
+
+@mixin button-mixin($color, $border-color, $text-color: $color-base-0, $hover-color: "") {
+  $fix-hover-color: $color;
+  @if ($hover-color != "") {
+    $fix-hover-color: $hover-color;
+  }
+  background-color: $color;
+  color: $text-color;
+  border-color: $border-color;
+  &:hover {
+    cursor: pointer;
+    background-color: darken($fix-hover-color, 5%);
+  }
+  &:focus {
+    background-color: lighten($fix-hover-color, 10%);
+  }
+  &:active {
+    background-color: lighten($fix-hover-color, 25%);
+  }
+}
+
+
+.btn {
+  width: fit-content;
+  height: $size-btn-md;
+  padding: $size-2 $size-4;
+  font-weight: $font-semibold;
+  border-radius: $size-radius;
+  cursor: pointer;
+  border: $size-0-25 solid;
+
+  &--primary {
+    @include button-mixin($color-primary, $color-primary, $color-base-0);
+  }
+  &--danger {
+    @include button-mixin($color-danger-50, $color-danger-50, $color-base-0);
+  }
+  &--secondary {
+    @include button-mixin($color-base-0, $color-primary, $color-primary, $color-clay-30);
+  }
+  &--text {
+    @include button-mixin($color-base-0, $color-base-0, $color-primary, $color-base-0);
+  }
+};
+
+.btn--lg {
+  height: $size-11;
+  font-size: $size-text-md;
+}

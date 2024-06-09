@@ -1,0 +1,107 @@
+/* ========================================================================== */
+/* Poestaka size */
+/* ========================================================================== */
+
+$size-0: 0px;
+$size-0-25: 1px;
+$size-0-5: 2px;
+$size-1: 4px;
+$size-1-5: 6px;
+$size-2: 8px;
+$size-2-5: 10px;
+$size-3: 12px;
+$size-3-5: 14px;
+$size-4: 16px;
+$size-4-5: 18px;
+$size-5: 20px;
+$size-6: 24px;
+$size-7: 28px;
+$size-8: 32px;
+$size-9: 36px;
+$size-10: 40px;
+$size-11: 44px;
+$size-12: 48px;
+$size-14: 56px;
+$size-15: 60px;
+$size-16: 64px;
+$size-18: 68px;
+$size-20: 80px;
+$size-40: 160px;
+$size-60: 240px;
+$size-80: 320px;
+$size-100: 400px;
+
+$size-text-xs: $size-2-5;
+$size-text-sm: $size-3;
+$size-text-md: $size-3-5;
+$size-text-lg: $size-4-5;
+$size-text-xl: $size-6;
+$size-text-2xl: $size-9;
+$size-text-3xl: $size-12;
+
+$size-radius: $size-2;
+$size-border: $size-0-25;
+
+$size-btn-sm: $size-6;
+$size-btn-md: $size-9;
+$size-btn-lg: $size-11;
+
+$size-container-w: 1206px;
+
+$size-per-1: calc((1/12)*100%);
+$size-per-2: calc((2/12)*100%);
+$size-per-3: calc((3/12)*100%);
+$size-per-4: calc((4/12)*100%);
+$size-per-5: calc((5/12)*100%);
+$size-per-6: calc((6/12)*100%);
+$size-per-7: calc((7/12)*100%);
+$size-per-8: calc((8/12)*100%);
+$size-per-9: calc((9/12)*100%);
+$size-per-10: calc((10/12)*100%);
+$size-per-11: calc((11/12)*100%);
+$size-per-12: calc((12/12)*100%);
+
+$size-full: $size-per-12;
+$size-half: $size-per-6;
+
+$sizes : (
+  '0': $size-0,
+  '0-25': $size-0-25,
+  '0-5': $size-0-5,
+  '1': $size-1,
+  '1-5': $size-1-5,
+  '2': $size-2,
+  '2-5': $size-2-5,
+  '3': $size-3,
+  '3-5': $size-3-5,
+  '4': $size-4,
+  '4-5': $size-4-5,
+  '5': $size-5,
+  '6': $size-6,
+  '7': $size-7,
+  '8': $size-8,
+  '9': $size-9,
+  '10': $size-10,
+  '11': $size-11,
+  '12': $size-12,
+  '14': $size-14,
+  '15': $size-15,
+  '16': $size-16,
+  '18': $size-18,
+  '20': $size-20,
+);
+
+$layouts : (
+  'per-1': $size-per-1,
+  'per-2': $size-per-2,
+  'per-3': $size-per-3,
+  'per-4': $size-per-4,
+  'per-5': $size-per-5,
+  'half': $size-per-6,
+  'per-7': $size-per-7,
+  'per-8': $size-per-8,
+  'per-9': $size-per-9,
+  'per-10': $size-per-10,
+  'per-11': $size-per-11,
+  'full': $size-per-12,
+);

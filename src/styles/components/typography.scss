@@ -1,0 +1,46 @@
+@mixin heading-mixin($font-size, $font-weight: $font-bold) {
+  font-family: $font-style-header;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $color-primary;
+  line-height: 1.2;
+}
+
+.heading {
+  @include heading-mixin($size-text-3xl);
+}
+
+.heading-2 {
+  @include heading-mixin($size-text-2xl);
+}
+
+.heading-3 {
+  @include heading-mixin($size-text-xl);
+}
+
+.heading-4 {
+  @include heading-mixin($size-text-lg, $font-semibold);
+}
+
+.title {
+  font-size: $size-text-lg;
+  font-weight: $font-medium;
+}
+
+.text-sm {
+  font-size: $size-text-sm;
+  color: $color-text;
+}
+
+.text-md {
+  font-size: $size-text-lg;
+  color: $color-text;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+.text-center {
+  text-align: center;
+}

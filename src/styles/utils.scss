@@ -1,0 +1,51 @@
+@use "sass:meta";
+@use "./variables/sizes";
+
+// SIDE
+$all-side : '';
+$top      : "-top";
+$bottom   : "-bottom";
+$left     : "-left";
+$right    : "-right";
+
+$sides: (
+  '': $all-side,
+  't': $top,
+  'b': $bottom,
+  'l': $left,
+  'r': $right,
+);
+
+// Margin and Padding Classes
+@each $p, $prop in (m: margin, p: padding) {
+  @each $s, $side in $sides{
+    @each $key, $size in $sizes{
+      .#{$p}#{$s}-#{$key} { #{$prop}#{$side} : $size !important;}
+    }
+  }
+  @each $key, $size in $sizes{
+    .#{$p}x-#{$key} { 
+      #{$prop}-left   : $size !important;
+      #{$prop}-right  : $size !important;
+    }
+    .#{$p}y-#{$key} { 
+      #{$prop}-top     : $size !important;
+      #{$prop}-bottom  : $size !important;
+    }
+  }
+}
+
+// Width
+@each $key, $value in $layouts {
+  .w-#{$key} {
+    width: $value;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}

@@ -1,0 +1,41 @@
+
+/* ========================================================================== */
+/* Poestaka color scheme */
+/* ========================================================================== */
+
+$color-base-0: #FFFFFF;
+$color-base-90: #000000;
+
+$color-clay-20: #efeeec;
+$color-clay-30: #D2B48C;
+$color-clay-40: #B87333;
+$color-clay-50: #8A5523;
+$color-clay-60: #8B4513;
+
+$color-charcoal-60: #36454f;
+$color-charcoal-70: #1C2226;
+$color-charcoal-80: #111416;
+
+$color-danger-40: #Ad4136;
+$color-danger-50: #B22222;
+$color-danger-60: #621C17;
+
+$color-warning-40: #d3bb7d;
+$color-warning-50: #D9A520;
+$color-warning-60: #997929;
+
+$color-info-40: #6d99d5;
+$color-info-50: #0048AD;
+$color-info-60: #0f3b78;
+
+$color-success-40: #82c182;
+$color-success-50: #228C22;
+$color-success-60: #204120;
+
+$color-primary: $color-clay-50;
+$color-text: $color-charcoal-70;
+
+
+$colors: (
+  'color-base': $color-base-0,
+);

@@ -1,0 +1,21 @@
+.card {
+  cursor: pointer;
+  width: calc(20% - 20px);
+  text-decoration: none;
+  &__image {
+    border-radius: 12px;
+    width: 100%;
+    height: 300px;
+    margin-bottom: $size-1;
+  }
+  &__desc {
+    margin-bottom: $size-4;
+    color: $color-charcoal-60;
+    &-title {
+      font-weight: $font-semibold;
+      margin: $size-1 0;
+      color: $color-charcoal-70;
+      line-height: 1.2;
+    }
+  }
+}
