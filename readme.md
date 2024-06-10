@@ -4,8 +4,6 @@ Welcome to Poestaka, your enchanted portal into the world of books! At Poestaka,
 
 [Demo on Vercel](https://poestaka-mhafizd21s-projects.vercel.app/)
 
-https://poestaka-mhafizd21s-projects.vercel.app/
-
 by: mhafizd21
 
 ## Project Setup
