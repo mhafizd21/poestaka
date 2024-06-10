@@ -1,10 +1,13 @@
+import dayjs from "dayjs";
+import { useState } from "react";
+import Skeleton from "react-loading-skeleton";
 import { useQuery } from "react-query";
 import { useNavigate, useParams } from "react-router-dom";
-import dayjs from "dayjs";
+import { IconFavorite, IconFavoriteFilled } from "../../assets/icons";
 import { Button, Container } from "../../components";
+import useFavorite from "../../hooks/useFavorite";
+import { IBook } from "../../interfaces";
 import { getBookById } from "../../services/api";
-import Skeleton from "react-loading-skeleton";
-import { useState } from "react";
 
 const defaultImage = "https://placehold.co/388x500";
 
@@ -21,6 +24,7 @@ const Books = () => {
       }
     });
   const navigate = useNavigate();
+  const { isInFavoriteList, handleAddToFavorite } = useFavorite(data || {} as IBook);
 
   return (
     <Container>
@@ -65,8 +69,14 @@ const Books = () => {
                     |
                   </p>
                   <p className="books-detail__info-text">
-                    {dayjs(data?.publicationDate).format("YYYY")}
+                    {dayjs(data?.publicationDate).format("DD MMMM YYYY")}
                   </p>
+                  <Button
+                    variant="icon"
+                    onClick={() => handleAddToFavorite()}
+                  >
+                    {isInFavoriteList ? <IconFavoriteFilled /> : <IconFavorite />}
+                  </Button>
                 </div>
                 <p className="books-detail__description">
                   {data?.description}

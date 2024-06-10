@@ -1,31 +1,15 @@
-import { Link, Outlet } from "react-router-dom";
-import Container from "./Container";
+import { Outlet } from "react-router-dom";
+import Footer from "./Footer";
+import Header from "./Header";
 
 const Layouts = () => {
   return (
     <div className="layouts">
-      <header className="layouts__header">
-        <Container>
-          <div className="layouts__header-content">
-            <Link to="/" className="logo">
-              Poestaka
-            </Link>
-            <div>
-              <div>
-                icon love
-              </div>
-            </div>
-          </div>
-        </Container>
-      </header>
+      <Header />
       <div className="layouts__main">
         <Outlet />
       </div>
-      <footer className="layouts__footer">
-        <Container>
-          Poestaka &#169; 2024
-        </Container>
-      </footer>
+      <Footer />
     </div>
   );
 };

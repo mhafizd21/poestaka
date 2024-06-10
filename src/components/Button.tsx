@@ -1,7 +1,7 @@
 import { ButtonHTMLAttributes, FC } from "react";
 import clsx from "clsx";
 
-type ButtonVariant = "primary" | "secondary" | "text";
+type ButtonVariant = "primary" | "secondary" | "text" | "icon";
 type ButtonSize = "md" | "lg";
 
 interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {

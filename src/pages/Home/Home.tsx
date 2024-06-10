@@ -1,6 +1,6 @@
-import { Button, Container } from "../../components";
-import Collection from "./Collection";
 import homeBanner from "../../assets/images/home-banner.jpg";
+import { Container } from "../../components";
+import Collection from "./Collection";
 
 const Home = () => {
   return (
@@ -16,9 +16,6 @@ const Home = () => {
             <p className="mb-10 text-md">
               Welcome to Poestaka, your enchanted portal into the world of books! At Poestaka, we believe every book has a soul and every reader deserves a story that speaks to theirs. Whether you're hunting for your next literary love, diving into uncharted genres, or seeking bespoke recommendations, Poestaka is your magical companion in the world of books.
             </p>
-            <Button size="lg">
-              Discover
-            </Button>
           </div>
           <div className="w-per-5">
             <img

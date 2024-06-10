@@ -1,8 +1,11 @@
 import dayjs from "dayjs";
 import { FC, useState } from "react";
+import Skeleton from "react-loading-skeleton";
 import { Link, LinkProps } from "react-router-dom";
 import { IBook } from "../interfaces";
-import Skeleton from "react-loading-skeleton";
+import Button from "./Button";
+import { IconFavorite, IconFavoriteFilled } from "../assets/icons";
+import useFavorite from "../hooks/useFavorite";
 
 interface ICard extends Omit<LinkProps, "to"> {
   data: IBook;
@@ -17,19 +20,31 @@ const Card: FC<ICard>= ({
   ...props
 }) => {
   const [imageBook, setImageBook] = useState(data?.cover);
+  const { isInFavoriteList, handleAddToFavorite } = useFavorite(data);
   return (
     <Link
       {...props}  
       to={`/books/${data.id}`}
       className="card"
     >
-      <div>
+      <div className="card__image-container">
         <img 
           src={imageBook}
           alt={data.title}
           className="card__image"
           onError={() => setImageBook(defaultImage)}
         />
+        <Button
+          variant="icon"
+          onClick={e => {
+            e.preventDefault();
+            handleAddToFavorite();
+          }}
+        >
+          {isInFavoriteList ? <IconFavoriteFilled /> : <IconFavorite />}
+        </Button>
+      </div>
+      <div>
         <div className="card__desc">
           <p className="text-center">
             {data.author}

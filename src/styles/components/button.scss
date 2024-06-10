@@ -49,4 +49,13 @@
     height: $size-9;
     font-size: $size-text-md;
   }
+  &--icon {
+    @include button-mixin($color-base-0, $color-base-0, $color-primary, $color-base-0);
+    width: fit-content;
+    height: fit-content;
+    padding: $size-3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 };

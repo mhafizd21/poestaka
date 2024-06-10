@@ -1,36 +1,7 @@
 .layouts {
   min-height: 100vh;
   padding-top: $size-18;
-  &__header {
-    background-color: $color-base-0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: $size-full;
-    z-index: 2;
-    &-content {
-      padding: $size-4 $size-0;
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 1px solid $color-primary;
-    }
-  }
-  &__footer {
-    background-color: $color-charcoal-60;
-    color: $color-base-0;
-    padding: $size-4 $size-0;
-  }
   &__main {
     min-height: calc(100vh - 121px);
   }
-}
-
-.logo {
-  font-family: $font-style-header;
-  font-weight: $font-bold;
-  font-size: $size-text-2xl;
-  line-height: 1;
-  font-style: italic;
-  color: $color-primary;
-  text-decoration: unset;
 }

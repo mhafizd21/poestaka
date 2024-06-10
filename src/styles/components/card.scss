@@ -7,6 +7,14 @@
     width: 100%;
     height: 300px;
     margin-bottom: $size-1;
+    &-container {
+      position: relative;
+      .btn {
+        position: absolute;
+        top: -16px;
+        right: 8px;
+      }
+    }
   }
   &__desc {
     margin-bottom: $size-4;
